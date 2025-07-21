@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "trap-wizard-cloud-logger",
+  "private_key_id": "b7288f1493cb8365b87ad937952bf063a6152ab3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC0Mtbczodk1yIB\nsk7fRntoXzm2/MnZ4ADctvKwihGGSHvEk06F11GiG8RH1wQR27rL98W0k/ByjcVr\nA00IIZLKnLWC1Vxs8LLUl0LERa8LtTdv/j9Y97lNKKpz3l5UlRXVReA68bsWQlea\nrh51NKoHr/FPvFxhksNKxyaOIA6SpC0Dnj2Kt4tOd6/naDpElzsmfqWh3Y170q/l\nxTsQBzVDPHwtfbiTzeXgB/6ylSrKQcYolVNyBjbvWrl8e36VbC3fh+ZLC2IYQAP2\ngesz6tuh/qSSWMezA2oYNJf3DQbMvDBGzP4k5WxB3iGxno+X556nBdardd8mFUAQ\n8bgRqSrlAgMBAAECggEAHI+KRUkUEJmV3EBPW/gnNdhnT2eASWDFrOCaVVIs4ORl\nfuH81MiB5Hho2HIYml6snAjTdIGWNLHfvncGzekfA69piCkaaHHmBj1LPyHu/U4Q\nUVcyNymxsaxmXSMQ6cW6G37jFrSa+zYx/bmR6PBwmp36WLGkJXBGNSNHgHNNm/7W\no5VBBfdMpFujqI6o4RHibC+aHSgD7YQGf5arlBw7YsBmH9a8TFeZsiHQu+b4a7op\nSbPvlPwlL/UlOa7hvuivgDu1jYuefx/DdG7v/EFTWT7qbzLm1TiZ0IxN7s8/w9DY\naXwq3cUCj5ilXrAvwDYjt4Ee0icQfZPofdjy2HdgqQKBgQDkskZba5sdmThb5i4H\nqUFSohQ0cTy62y7GBsecwIMMVBhGOTIo6H4yfoag9jbnLuxt9j++E23WOY20yO0n\ncJme6R/+lsNeQ4yY2zzW5cUyxfhlT7oSEi0tjN8/z+atdlKyk+rToHTYWzv4obJy\nVHCipL3sSgf57n+g2BjG7tqu8wKBgQDJtk9XThPFcAlBd3OipsTGmnsk84VXUD+G\nNu325lnMdPA8lhRJUjIw5fY2mxqtrgh5orQf2p4bka3N99qfsEnVA9UbHdEf4B0M\n/TWPDyuiMO30YnpqC8dsedULgtnRre///8NI8p/KSV20W6TYbWXEauvMqOMopcW+\nl+0/xOskxwKBgQDPEIMXfyRg9jvLKWv/z8WvVcTJfsWnwZBmB/lv+fYtkW6xFlRO\nKcMpYNnwnz0ysI+tOEqahOjsEAw35byj+xV8hkNLtaGKlcqVE9vQDxYvVIQE5tzo\nQ8DX/zabhlesMvfJbJgvqJZi1qhEA9OYJNAe0t6LNLRoHQM91KsKY3Vo9QKBgQCo\nu66nE5MKZ+v2LZw3hVW55OP6RxNVtLVO6ogpLwwTMgb8R3b01qNRsCxEBX9NpfVE\n+su+kbwMx9IiJ6FkT62TWT9dDZYwGeNzSCUTZNdVN6T196L7LptFrKyAkpbvBZds\nCGEtlngAWVrfUoIU4X5tzhst+mD7UaCXDLPT0j/5ZQKBgFLMSyJbPAChdiLbqwrP\nfJ0sVrxYXcpCDK6CvXObYBy90N9vq3EFBeZxYslYdPEl+jySuSbMAfsRN8/JA2WC\nvoCrQRT3SD4LU+BkOldwk06AH5uRAx7UVGk2pXiKl9HsWeQLXCn87qo0yjMyPXwE\nQBgkEue1cp2SezXLrj1N4r/Y\n-----END PRIVATE KEY-----\n",
+  "client_email": "tv-webhook-logger@trap-wizard-cloud-logger.iam.gserviceaccount.com",
+  "client_id": "100472680853548833534",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tv-webhook-logger%40trap-wizard-cloud-logger.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
