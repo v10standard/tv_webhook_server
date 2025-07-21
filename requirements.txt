@@ -1,5 +1,6 @@
 fastapi
 uvicorn
 openpyxl
-gspread
-oauth2client
+gspread==5.12.0
+google-auth==2.29.0
+
