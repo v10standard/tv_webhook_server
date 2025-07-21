@@ -1,12 +1,19 @@
 from fastapi import FastAPI, Request
-from openpyxl import load_workbook
 from datetime import datetime
-import os
+import gspread
+from google.oauth2.service_account import Credentials
 
 app = FastAPI()
 
-EXCEL_FILE = "Excel_Trade_Command_Center_Frame.xlsx"
-RAW_DATA_SHEET = "Raw_Data"
+# Google Sheets setup
+SERVICE_ACCOUNT_FILE = 'trap-wizard-cloud-logger-key.json'  # Make sure this matches your downloaded file name
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+SPREADSHEET_ID = "YOUR_SPREADSHEET_ID_HERE"  # Replace with your actual Google Sheet ID
+SHEET_NAME = "Raw_Data"  # Name of the tab to write to
+
+creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+client = gspread.authorize(creds)
+sheet = client.open_by_key(SPREADSHEET_ID).worksheet(SHEET_NAME)
 
 @app.post("/tv-webhook")
 async def receive_tv_alert(request: Request):
@@ -14,33 +21,14 @@ async def receive_tv_alert(request: Request):
 
     symbol = payload.get("symbol", "N/A")
     tf = payload.get("tf", "N/A")
-    time = payload.get("time", "N/A")
-    rsi = payload.get("RSI", None)
-    macd = payload.get("MACD", None)
-    macd_signal = payload.get("MACD_Signal", None)
-    wt1 = payload.get("WT1", None)
-    wt2 = payload.get("WT2", None)
+    time = payload.get("time", datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"))
+    rsi = payload.get("RSI", "")
+    macd = payload.get("MACD", "")
+    macd_signal = payload.get("MACD_Signal", "")
+    wt1 = payload.get("WT1", "")
+    wt2 = payload.get("WT2", "")
 
-    if not os.path.exists(EXCEL_FILE):
-        from openpyxl import Workbook
-        wb = Workbook()
-        ws = wb.active
-        ws.title = RAW_DATA_SHEET
-        ws.append(["Timestamp", "Symbol", "Timeframe", "RSI", "MACD", "MACD_Signal", "WT1", "WT2"])
-        wb.save(EXCEL_FILE)
+    row = [time, symbol, tf, rsi, macd, macd_signal, wt1, wt2]
+    sheet.append_row(row)
 
-    wb = load_workbook(EXCEL_FILE)
-    if RAW_DATA_SHEET not in wb.sheetnames:
-        wb.create_sheet(RAW_DATA_SHEET)
-    ws = wb[RAW_DATA_SHEET]
-
-    if ws.max_row < 2:
-        ws.append(["Timestamp", "Symbol", "Timeframe", "RSI", "MACD", "MACD_Signal", "WT1", "WT2"])
-
-    ws.append([
-        datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        symbol, tf, rsi, macd, macd_signal, wt1, wt2
-    ])
-
-    wb.save(EXCEL_FILE)
-    return {"status": "received"}
+    return {"status": "✅ Data logged to Google Sheets"}
